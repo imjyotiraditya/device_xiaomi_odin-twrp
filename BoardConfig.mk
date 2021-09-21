@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/renoir
+DEVICE_PATH := device/xiaomi/odin
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -38,7 +38,7 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := renoir
+TARGET_OTA_ASSERT_DEVICE := odin
 
 # A/B
 AB_OTA_UPDATER := true
@@ -85,8 +85,8 @@ BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
 KERNEL_LD := LD=ld.lld
 TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/linux-x86/dtc/dtc
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CONFIG := renoir_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/renoir
+TARGET_KERNEL_CONFIG := vendor/odin-qgki_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/odin
 NEED_KERNEL_MODULE_RECOVERY := true
 
 # Metadata

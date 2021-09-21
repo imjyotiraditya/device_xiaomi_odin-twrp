@@ -10,5 +10,11 @@
    "target_path" : "hardware/qcom-caf/bootctrl",
    "remote"      : "LineageOS",
    "revision"    : "lineage-18.1-caf"
+ },
+ {
+   "repository"  : "imjyotiraditya/msm-5.4-odin",
+   "target_path" : "kernel/xiaomi/odin",
+   "remote"      : "github",
+   "revision"    : "android-11"
  }
 ]
