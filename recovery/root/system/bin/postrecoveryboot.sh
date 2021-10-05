@@ -19,7 +19,7 @@ copy-modules() {
 
     echo "using vendor$suffix modules"
     mkdir /v
-    mount -t ext4 -o ro /dev/block/mapper/vendor"$suffix" /v
+    mount -t erofs -o ro /dev/block/mapper/vendor"$suffix" /v
     rm -f /vendor/lib/modules/*
     cp -afR /v/lib/modules/* /vendor/lib/modules/
     umount /v
