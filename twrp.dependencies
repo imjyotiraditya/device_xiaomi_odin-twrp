@@ -13,8 +13,8 @@
  },
  {
    "repository"  : "imjyotiraditya/msm-5.4-odin",
-   "target_path" : "kernel/xiaomi/odin",
+   "target_path" : "kernel/msm-5.4",
    "remote"      : "github",
-   "revision"    : "android-11"
+   "revision"    : "ruby"
  }
 ]
