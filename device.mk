@@ -105,7 +105,7 @@ PLATFORM_VERSION := 127
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 
-TW_LOAD_VENDOR_MODULES := "fts_touch_spi_k8.ko"
+TW_LOAD_VENDOR_MODULES := "fts_touch_spi_k8.ko adsp_loader_dlkm.ko qti_battery_charger_main_odin.ko"
 
 TARGET_RECOVERY_DEVICE_MODULES += \
     libandroidicu \
