@@ -16,6 +16,12 @@
       "File": "top-app/cpus"
     },
     {
+      "Name": "AudioAppCapacityCPUs",
+      "Controller": "cpuset",
+      "File": "audio-app/cpus"
+    },
+
+    {
       "Name": "MemLimit",
       "Controller": "memory",
       "File": "memory.limit_in_bytes"
@@ -53,7 +59,7 @@
     {
       "Name": "FreezerState",
       "Controller": "freezer",
-      "File": "cgroup.freeze"
+      "File": "frozen/freezer.state"
     }
   ],
 
@@ -79,7 +85,7 @@
           "Params":
           {
             "Controller": "freezer",
-            "Path": ""
+            "Path": "frozen"
           }
         }
       ]
@@ -92,7 +98,7 @@
           "Params":
           {
             "Controller": "freezer",
-            "Path": "../"
+            "Path": ""
           }
         }
       ]
@@ -158,6 +164,19 @@
           {
             "Controller": "schedtune",
             "Path": "camera-daemon"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "AudioAppPerformance",
+      "Actions" : [
+        {
+          "Name" : "JoinCgroup",
+          "Params" :
+          {
+            "Controller": "schedtune",
+            "Path": "audio-app"
           }
         }
       ]
@@ -375,6 +394,46 @@
         }
       ]
     },
+    {
+      "Name": "AudioAppCapacity",
+      "Actions" : [
+        {
+          "Name" : "JoinCgroup",
+          "Params" :
+          {
+            "Controller": "cpuset",
+            "Path": "audio-app"
+          }
+        }
+      ]
+    },
+
+    {
+      "Name": "BlkIOForeground",
+      "Actions" : [
+        {
+          "Name" : "JoinCgroup",
+          "Params" :
+          {
+            "Controller": "blkio",
+            "Path": ""
+          }
+        }
+      ]
+    },
+    {
+      "Name": "BlkIOBackground",
+      "Actions" : [
+        {
+          "Name" : "JoinCgroup",
+          "Params" :
+          {
+            "Controller": "blkio",
+            "Path": "bg"
+          }
+        }
+      ]
+    },
 
     {
       "Name": "LowIoPriority",
@@ -538,27 +597,27 @@
       ]
     },
     {
-      "Name": "FreezerDisabled",
+      "Name": "FreezerThawed",
       "Actions": [
         {
           "Name": "SetAttribute",
           "Params":
           {
             "Name": "FreezerState",
-            "Value": "0"
+            "Value": "THAWED"
           }
         }
       ]
     },
     {
-      "Name": "FreezerEnabled",
+      "Name": "FreezerFrozen",
       "Actions": [
         {
           "Name": "SetAttribute",
           "Params":
           {
             "Name": "FreezerState",
-            "Value": "1"
+            "Value": "FROZEN"
           }
         }
       ]
