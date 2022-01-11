@@ -28,15 +28,12 @@ cc_library {
         "-Wall",
         "-Werror",
         "-Wno-unused-parameter",
-        "-D_GENERIC_KERNEL_HEADERS",
+        "-D_BSG_FRAMEWORK_KERNEL_HEADERS",
     ],
     srcs: [
         "gpt-utils.cpp",
         "recovery-ufs-bsg.cpp",
     ],
     owner: "qti",
-    header_libs: [
-        "device_kernel_headers",
-    ],
     export_include_dirs: ["."],
 }
